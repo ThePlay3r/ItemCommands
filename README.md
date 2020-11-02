@@ -14,6 +14,7 @@ Spigot plugin to run commands with items.
 
 ## 🎮 Commands & Permissions
 - [Overview](https://github.com/ThePlay3r/ItemCommands/wiki/Commands-And-Permissions#overview)
+- [Admin Commands](https://github.com/ThePlay3r/ItemCommands/wiki/Commands-And-Permissions#admin-commands)
 
 ## 🔎 Setup
 - [Wiki](https://github.com/ThePlay3r/ItemCommands/wiki)
