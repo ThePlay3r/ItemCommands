@@ -1,0 +1,10 @@
+name: ItemCommands
+version: ${project.version}
+main: me.pljr.itemcommands.ItemCommands
+api-version: 1.13
+authors: [9hx]
+depend: [PLJRApi]
+description: Simple plugin for executing commands with items.
+commands:
+  aitemcommands:
+    description: Admin command for item commands.
