@@ -28,11 +28,11 @@ public class CommandItemManager {
         }
         for (String consoleCommand : commandItem.getConsoleCommands()){
             if (consoleCommand.equals("")) continue;
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), consoleCommand.replace("%player", playerName));
+            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), consoleCommand.replace("{player}", playerName));
         }
         for (String playerCommands : commandItem.getPlayerCommands()){
             if (playerCommands.equals("")) continue;
-            Bukkit.dispatchCommand(player, playerCommands.replace("%player", playerName));
+            Bukkit.dispatchCommand(player, playerCommands.replace("{player}", playerName));
         }
     }
 }

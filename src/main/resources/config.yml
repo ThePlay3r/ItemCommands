@@ -20,7 +20,7 @@ items:
     lore:
       - "§cOnly one usage."
     console-commands:
-      - "say %player Said hello!"
+      - "say {player} Said hello!"
     player-commands:
       - "say Hello!"
   infinite-hello:
@@ -30,7 +30,7 @@ items:
     lore:
       - "§cSay hello as much as you want!"
     console-commands:
-      - "say %player Said hello!"
+      - "say {player} Said hello!"
     player-commands:
       - "say Hello!"
 #|--------------------------------------------------------------------------------------------------------------------|#
@@ -50,8 +50,8 @@ admin-help:
 
 lang:
   NO_CONSOLE: "§aItemCommands §8» §fThis command is for in-game use only!"
-  GET_SUCCESS: "§aItemCommands §8» §b%item §fhas been added to your inventory."
-  GET_FAILURE_NO_ITEM: "§aItemCommands §8» §b%item §fis not a command item."
+  GET_SUCCESS: "§aItemCommands §8» §b{item} §fhas been added to your inventory."
+  GET_FAILURE_NO_ITEM: "§aItemCommands §8» §b{item} §fis not a command item."
   LIST_TITLE: "§aItemCommands §8» §bList of all items:"
-  LIST_FORMAT: "§7- §f%name"
+  LIST_FORMAT: "§7- §f{name}"
 #|--------------------------------------------------------------------------------------------------------------------|#
