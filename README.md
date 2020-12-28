@@ -34,5 +34,6 @@ Spigot plugin to run commands with items.
 | [Reactions](https://github.com/ThePlay3r/Reactions) `Spigot plugin for in-game reactions.` <br>
 | [Bank](https://github.com/ThePlay3r/Bank) `Spigot plugin for in-game player banks.` <br>
 | [CustomDrops](https://github.com/ThePlay3r/CustomDrops) `Spigot plugin for custom drops from blocks and mobs.` <br>
+| [CustomRecipes](https://github.com/ThePlay3r/CustomRecipes) `Spigot plugin for creating custom shaped in-game recipes.` <br>
 | [DamageVisualizer](https://github.com/ThePlay3r/DamageVisualizer) `Spigot plugin for visualizing damage.` <br>
 | [ItemCommands](https://github.com/ThePlay3r/ItemCommands) `Spigot plugin to run commands with items.` <br>
