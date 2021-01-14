@@ -5,7 +5,7 @@
 # Author: https://www.mc-market.org/members/89497/
 # Description: Simple plugin for executing commands with items.
 # Dependencies:
-#   -> PLJRApi
+#   -> PLJRApi-Spigot
 #|--------------------------------------------------------------------------------------------------------------------|#
 
 ##############\
@@ -33,25 +33,4 @@ items:
       - "say {player} Said hello!"
     player-commands:
       - "say Hello!"
-#|--------------------------------------------------------------------------------------------------------------------|#
-
-##############\
-# Lang Setup ################################################################\
-############## Here, you can customize messages, send by the plugin itself. # \
-             ################################################################  \
-
-admin-help:
-  - ""
-  - "§a§lItemCommands Admin-Help v${project.version}"
-  - ""
-  - "§e/itemcommands help §8» §fDisplays this message."
-  - "§e/itemcommands list §8» §fDisplays list of all custom items."
-  - "§e/itemcommands get <name> §8» §fGives you desired command item."
-
-lang:
-  NO_CONSOLE: "§aItemCommands §8» §fThis command is for in-game use only!"
-  GET_SUCCESS: "§aItemCommands §8» §b{item} §fhas been added to your inventory."
-  GET_FAILURE_NO_ITEM: "§aItemCommands §8» §b{item} §fis not a command item."
-  LIST_TITLE: "§aItemCommands §8» §bList of all items:"
-  LIST_FORMAT: "§7- §f{name}"
 #|--------------------------------------------------------------------------------------------------------------------|#

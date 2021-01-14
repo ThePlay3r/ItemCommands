@@ -9,7 +9,6 @@ import me.pljr.pljrapispigot.managers.ConfigManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ItemCommands extends JavaPlugin {
-    private static ConfigManager configManager;
     private static CommandItemManager commandItemManager;
 
     @Override
@@ -23,9 +22,8 @@ public final class ItemCommands extends JavaPlugin {
 
     private void setupConfig(){
         saveDefaultConfig();
-        configManager = new ConfigManager(this, "config.yml");
-        Lang.load(configManager);
-        CfgItems.load(configManager);
+        Lang.load(new ConfigManager(this, "lang.yml"));
+        CfgItems.load(new ConfigManager(this, "config.yml"));
     }
 
     private void setupManagers(){

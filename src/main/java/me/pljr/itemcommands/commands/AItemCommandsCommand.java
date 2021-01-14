@@ -19,7 +19,7 @@ public class AItemCommandsCommand extends CommandUtil implements CommandExecutor
             // /aitemcommands help
             if (args[0].equalsIgnoreCase("help")){
                 if (!checkPerm(player, "itemcommands.admin.help")) return;
-                sendMessage(player, Lang.ADMIN_HELP);
+                sendMessage(player, Lang.ADMIN_HELP.get());
                 return;
             }
 
@@ -55,7 +55,7 @@ public class AItemCommandsCommand extends CommandUtil implements CommandExecutor
         }
 
         if (checkPerm(player, "itemcommands.admin.help")){
-            sendMessage(player, Lang.ADMIN_HELP);
+            sendMessage(player, Lang.ADMIN_HELP.get());
         }
     }
 }
