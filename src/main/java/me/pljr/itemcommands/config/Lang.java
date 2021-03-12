@@ -31,18 +31,15 @@ public enum Lang {
         FileConfiguration fileConfig = config.getConfig();
         for (Lang lang : Lang.values()){
             if (!fileConfig.isSet(lang.toString())){
-                fileConfig.set(lang.toString(), lang.getDefault());
+                fileConfig.set(lang.toString(), lang.defaultValue);
+            }else{
+                Lang.lang.put(lang, config.getString(lang.toString()));
             }
-            Lang.lang.put(lang, config.getString(lang.toString()));
         }
         config.save();
     }
 
     public String get(){
-        return lang.get(this);
-    }
-
-    public String getDefault(){
-        return this.defaultValue;
+        return lang.getOrDefault(this, defaultValue);
     }
 }

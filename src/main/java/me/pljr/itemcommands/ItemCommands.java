@@ -1,7 +1,7 @@
 package me.pljr.itemcommands;
 
 import me.pljr.itemcommands.commands.AItemCommandsCommand;
-import me.pljr.itemcommands.config.CfgItems;
+import me.pljr.itemcommands.config.Items;
 import me.pljr.itemcommands.config.Lang;
 import me.pljr.itemcommands.listeners.PlayerInteractListener;
 import me.pljr.itemcommands.managers.CommandItemManager;
@@ -9,7 +9,10 @@ import me.pljr.pljrapispigot.managers.ConfigManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ItemCommands extends JavaPlugin {
-    private static CommandItemManager commandItemManager;
+
+    private CommandItemManager commandItemManager;
+
+    private Items items;
 
     @Override
     public void onEnable() {
@@ -23,23 +26,19 @@ public final class ItemCommands extends JavaPlugin {
     private void setupConfig(){
         saveDefaultConfig();
         Lang.load(new ConfigManager(this, "lang.yml"));
-        CfgItems.load(new ConfigManager(this, "config.yml"));
+        items = new Items(new ConfigManager(this, "config.yml"));
     }
 
     private void setupManagers(){
-        commandItemManager = new CommandItemManager();
+        commandItemManager = new CommandItemManager(items);
     }
 
     private void setupCommands(){
-        getCommand("aitemcommands").setExecutor(new AItemCommandsCommand());
+        getCommand("aitemcommands").setExecutor(new AItemCommandsCommand(items));
     }
 
     private void setupListeners(){
-        getServer().getPluginManager().registerEvents(new PlayerInteractListener(), this);
-    }
-
-    public static CommandItemManager getCommandItemManager() {
-        return commandItemManager;
+        getServer().getPluginManager().registerEvents(new PlayerInteractListener(items, commandItemManager), this);
     }
 
     @Override

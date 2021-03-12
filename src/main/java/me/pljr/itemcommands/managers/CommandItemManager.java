@@ -1,6 +1,7 @@
 package me.pljr.itemcommands.managers;
 
-import me.pljr.itemcommands.config.CfgItems;
+import lombok.AllArgsConstructor;
+import me.pljr.itemcommands.config.Items;
 import me.pljr.itemcommands.objects.CommandItem;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -8,10 +9,13 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.Map;
 
+@AllArgsConstructor
 public class CommandItemManager {
 
+    private final Items items;
+
     public boolean check(Player player, ItemStack item){
-        for (Map.Entry<String, CommandItem> entry : CfgItems.items.entrySet()){
+        for (Map.Entry<String, CommandItem> entry : items.getItems().entrySet()){
             if (item.isSimilar(entry.getValue().getItem())){
                 use(player, entry.getValue());
                 return true;

@@ -1,6 +1,6 @@
 package me.pljr.itemcommands.commands;
 
-import me.pljr.itemcommands.config.CfgItems;
+import me.pljr.itemcommands.config.Items;
 import me.pljr.itemcommands.config.Lang;
 import me.pljr.pljrapispigot.utils.CommandUtil;
 import org.bukkit.command.CommandExecutor;
@@ -9,8 +9,11 @@ import org.bukkit.inventory.ItemStack;
 
 public class AItemCommandsCommand extends CommandUtil implements CommandExecutor {
 
-    public AItemCommandsCommand(){
+    private final Items items;
+
+    public AItemCommandsCommand(Items items){
         super("aitemcommands", "itemcommands.admin.use");
+        this.items = items;
     }
 
     @Override
@@ -27,7 +30,7 @@ public class AItemCommandsCommand extends CommandUtil implements CommandExecutor
             if (args[0].equalsIgnoreCase("list")){
                 if (!checkPerm(player, "itemcommands.admin.list")) return;
                 sendMessage(player, Lang.LIST_TITLE.get());
-                for (String itemName : CfgItems.names){
+                for (String itemName : items.getNames()){
                     sendMessage(player, Lang.LIST_FORMAT.get().replace("{name}", itemName));
                 }
                 return;
@@ -38,11 +41,11 @@ public class AItemCommandsCommand extends CommandUtil implements CommandExecutor
             // /aitecommands get <name>
             if (args[0].equalsIgnoreCase("get")){
                 if (!checkPerm(player, "itemcommands.admin.get")) return;
-                if (!CfgItems.names.contains(args[1])){
+                if (!items.getNames().contains(args[1])){
                     sendMessage(player, Lang.GET_FAILURE_NO_ITEM.get().replace("{item}", args[1]));
                     return;
                 }
-                ItemStack item = CfgItems.items.get(args[1]).getItem();
+                ItemStack item = items.getItems().get(args[1]).getItem();
                 if (player.getInventory().firstEmpty() == -1){
                     player.getWorld().dropItem(player.getLocation(), item);
                 }else{
