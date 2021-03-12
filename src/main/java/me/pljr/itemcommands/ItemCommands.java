@@ -1,5 +1,6 @@
 package me.pljr.itemcommands;
 
+import lombok.Getter;
 import me.pljr.itemcommands.commands.AItemCommandsCommand;
 import me.pljr.itemcommands.config.Items;
 import me.pljr.itemcommands.config.Lang;
@@ -12,7 +13,7 @@ public final class ItemCommands extends JavaPlugin {
 
     private CommandItemManager commandItemManager;
 
-    private Items items;
+    @Getter private Items items;
 
     @Override
     public void onEnable() {
