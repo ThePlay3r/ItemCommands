@@ -2,12 +2,11 @@ package me.pljr.itemcommands.commands;
 
 import me.pljr.itemcommands.config.Items;
 import me.pljr.itemcommands.config.Lang;
-import me.pljr.pljrapispigot.utils.CommandUtil;
-import org.bukkit.command.CommandExecutor;
+import me.pljr.pljrapispigot.commands.BukkitCommand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class AItemCommandsCommand extends CommandUtil implements CommandExecutor {
+public class AItemCommandsCommand extends BukkitCommand {
 
     private final Items items;
 
